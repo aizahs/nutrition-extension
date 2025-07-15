@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Food Network Nutrition Helper",
+  "version": "1.0",
+  "description": "Show nutrition info for Food Network recipes using Nutritionix.",
+  "permissions": ["scripting"],
+  "host_permissions": [
+    "https://www.foodnetwork.com/*",
+    "https://trackapi.nutritionix.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Nutrition Info"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.foodnetwork.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
